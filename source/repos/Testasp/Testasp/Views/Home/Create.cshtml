@@ -1,0 +1,33 @@
+﻿@model Testasp.Models.Player
+<h2>Добавление нового игрока</h2>
+
+@using (Html.BeginForm())
+{
+   <hr />
+        <h4>Футболист</h4>
+
+        <p>
+            Имя игрока <br />
+            @Html.EditorFor(model => model.Name)
+        </p>
+
+        <p>
+            Возраст <br />
+            @Html.EditorFor(model => model.Age)
+        </p>
+
+        <p>
+            Позиция на поле  <br />
+            @Html.EditorFor(model => model.Position)
+        </p>
+        <p>
+            Команда <br />
+            @Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)
+        </p>
+
+        <p>
+            <input type="submit" value="Добавить игрока"  class="btn btn-success"/>
+        </p>
+  
+    <hr  />
+}
